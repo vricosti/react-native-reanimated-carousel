@@ -23,6 +23,7 @@ import Curve from "./pages/curve";
 import Flow from "./pages/flow";
 import Fold from "./pages/fold";
 import LeftAlignComponent from "./pages/left-align";
+import LotaRemoteCtlComponent from './pages/lota-remotectl'
 import RightAlignComponent from "./pages/right-align";
 import MarqueeComponent from "./pages/marquee";
 import MultipleComponent from "./pages/multiple";
@@ -46,124 +47,128 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 export const LayoutsPage = [
   {
+    name: "lota-remotectl",
+    page: LotaRemoteCtlComponent,
+  },
+  {
     name: "normal",
     page: NormalComponent,
   },
-  {
-    name: "parallax",
-    page: ParallaxComponent,
-  },
-  {
-    name: 'stack',
-    page: StackComponent,
-  },
-  {
-    name: "left-align",
-    page: LeftAlignComponent,
-  },
-  {
-    name: "right-align",
-    page: RightAlignComponent
-  }
+  // {
+  //   name: "parallax",
+  //   page: ParallaxComponent,
+  // },
+  // {
+  //   name: 'stack',
+  //   page: StackComponent,
+  // },
+  // {
+  //   name: "left-align",
+  //   page: LeftAlignComponent,
+  // },
+  // {
+  //   name: "right-align",
+  //   page: RightAlignComponent
+  // }
 ];
 
-export const CustomAnimations = [
-  {
-    name: 'quick-swipe',
-    page: QuickSwipe,
-  },
-  {
-    name: 'tinder',
-    page: Tinder,
-  },
-  {
-    name: 'blur-rotate',
-    page: BlurRotate,
-  },
-  {
-    name: 'material-3',
-    page: Material3
-  },
-  {
-    name: "curve",
-    page: Curve,
-  },
-  {
-    name: "blur-parallax",
-    page: BlurParallax,
-  },
-  {
-    name: "cube-3d",
-    page: Cube3D,
-  },
-  {
-    name: "press-swipe",
-    page: PressSwipe,
-  },
-  {
-    name: "tear",
-    page: Tear,
-  },
-  {
-    name: "stack-cards",
-    page: StackCards,
-  },
-  {
-    name: "fold",
-    page: Fold,
-  },
-  {
-    name: "circular",
-    page: Circular,
-  },
-  {
-    name: "flow",
-    page: Flow,
-  },
-  {
-    name: "parallax-layers",
-    page: ParallaxLayers,
-  },
-  {
-    name: "advanced-parallax",
-    page: AdvancedParallaxComponent,
-  },
-  {
-    name: "pause-advanced-parallax",
-    page: PauseAdvancedParallaxComponent,
-  },
-  {
-    name: "scale-fade-in-out",
-    page: ScaleFadeInOutComponent,
-  },
-  {
-    name: 'rotate-in-out',
-    page: RotateInOutComponent,
-  },
-  {
-    name: "rotate-scale-fade-in-out",
-    page: RotateScaleFadeInOutComponent,
-  },
-  {
-    name: "anim-tab-bar",
-    page: AnimTabBarComponent,
-  },
-  {
-    name: "marquee",
-    page: MarqueeComponent,
-  },
-  {
-    name: "multiple",
-    page: MultipleComponent,
-  },
-];
+// export const CustomAnimations = [
+//   {
+//     name: 'quick-swipe',
+//     page: QuickSwipe,
+//   },
+//   {
+//     name: 'tinder',
+//     page: Tinder,
+//   },
+//   {
+//     name: 'blur-rotate',
+//     page: BlurRotate,
+//   },
+//   {
+//     name: 'material-3',
+//     page: Material3
+//   },
+//   {
+//     name: "curve",
+//     page: Curve,
+//   },
+//   {
+//     name: "blur-parallax",
+//     page: BlurParallax,
+//   },
+//   {
+//     name: "cube-3d",
+//     page: Cube3D,
+//   },
+//   {
+//     name: "press-swipe",
+//     page: PressSwipe,
+//   },
+//   {
+//     name: "tear",
+//     page: Tear,
+//   },
+//   {
+//     name: "stack-cards",
+//     page: StackCards,
+//   },
+//   {
+//     name: "fold",
+//     page: Fold,
+//   },
+//   {
+//     name: "circular",
+//     page: Circular,
+//   },
+//   {
+//     name: "flow",
+//     page: Flow,
+//   },
+//   {
+//     name: "parallax-layers",
+//     page: ParallaxLayers,
+//   },
+//   {
+//     name: "advanced-parallax",
+//     page: AdvancedParallaxComponent,
+//   },
+//   {
+//     name: "pause-advanced-parallax",
+//     page: PauseAdvancedParallaxComponent,
+//   },
+//   {
+//     name: "scale-fade-in-out",
+//     page: ScaleFadeInOutComponent,
+//   },
+//   {
+//     name: 'rotate-in-out',
+//     page: RotateInOutComponent,
+//   },
+//   {
+//     name: "rotate-scale-fade-in-out",
+//     page: RotateScaleFadeInOutComponent,
+//   },
+//   {
+//     name: "anim-tab-bar",
+//     page: AnimTabBarComponent,
+//   },
+//   {
+//     name: "marquee",
+//     page: MarqueeComponent,
+//   },
+//   {
+//     name: "multiple",
+//     page: MultipleComponent,
+//   },
+// ];
 
-export const ExperimentPage = [
-  {
-    name: "complex",
-    page: ComplexComponent,
-  },
-];
+// export const ExperimentPage = [
+//   {
+//     name: "complex",
+//     page: ComplexComponent,
+//   },
+// ];
 
 const ListItem = ({ name, onPress, color }: { name: string; onPress: () => void; color: string }) => (
   <TouchableOpacity onPress={onPress}>
@@ -211,11 +216,15 @@ const Index = () => {
   );
 
   return (
-    <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: 64 }} stickyHeaderIndices={[0, LayoutsPage.length + 1, LayoutsPage.length + CustomAnimations.length + 2]}>
+    <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: 64 }} stickyHeaderIndices={[0, LayoutsPage.length + 1]}>
       {renderSection('Layouts', LayoutsPage)}
-      {renderSection('CustomAnimations', CustomAnimations)}
-      {renderSection('Experiment', ExperimentPage)}
     </ScrollView>
+
+    // <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: 64 }} stickyHeaderIndices={[0, LayoutsPage.length + 1, LayoutsPage.length + CustomAnimations.length + 2]}>
+    //   {renderSection('Layouts', LayoutsPage)}
+    //   {renderSection('CustomAnimations', CustomAnimations)}
+    //   {renderSection('Experiment', ExperimentPage)}
+    // </ScrollView>
   );
 };
 

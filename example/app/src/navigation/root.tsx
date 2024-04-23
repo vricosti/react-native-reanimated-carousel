@@ -7,7 +7,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import * as Updates from "expo-updates";
 
 import { QRCode } from "../components/QRCode";
-import Home, { CustomAnimations, LayoutsPage, ExperimentPage } from "../Home";
+import Home, { LayoutsPage } from "../Home";
+//import Home, { CustomAnimations, LayoutsPage, ExperimentPage } from "../Home";
 import { isWeb } from "../utils";
 import { useColor } from "../hooks/useColor";
 import { useWebContext } from "../store/WebProvider";
@@ -86,8 +87,8 @@ export const RootNavigator = () => {
         <Stack.Screen name="Home" component={Home} />
         {[
           ...LayoutsPage,
-          ...CustomAnimations,
-          ...ExperimentPage,
+          // ...CustomAnimations,
+          // ...ExperimentPage,
         ].map((item) => {
           return (
             <Stack.Screen

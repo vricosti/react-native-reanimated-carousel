@@ -49,11 +49,10 @@ function Index() {
         data={data}
         onScrollStart={()=>{console.log('===1')}}
         onScrollEnd={()=>{console.log('===2')}}
-
         onConfigurePanGesture={g => g.enabled(false)}
         pagingEnabled={isPagingEnabled}
         onSnapToItem={index => console.log("current index:", index)}
-        renderItem={({ index }) => <SBItem key={index} index={index} />}
+        renderItem={({ index }) => <SBItem key={index} index={index} pretty={true}/>}
       />
       <ScrollView style={{ flex: 1 }}>
         <SButton
